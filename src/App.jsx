@@ -4,6 +4,7 @@ import Header from './componets/Header'
 import NavBar from './componets/NavBar'
 import { Outlet } from 'react-router-dom'
 import Dashboard from './componets/Dashboard'
+import SelectVehicle from './componets/SelectVehicle'
 
 function App() {
 
