@@ -3,7 +3,7 @@ import axios from 'axios'
 import './SelectVehicle.css'
 
 
-export default function SelectVehicle(props) {
+export default function SelectVehicle({onVehicleSelect}) {
   
 
   const apiKey = import.meta.env.VITE_API_KEY
@@ -19,10 +19,12 @@ export default function SelectVehicle(props) {
   const getVehicleInfo = async () => {
     try {
       const response = await axios.get(`https://api.api-ninjas.com/v1/cars?year=${selectedYear}&make=${selectedMake}&model=${selectedModel}`, { 
-        
         headers: { 'X-Api-Key': apiKey }
       }); 
       console.log(response.data);
+      if (response.data && response.data.length > 0) {
+        onVehicleSelect(response.data[0])
+      }
     } catch (error) {
       console.error('Error getting Vehicle Information:', error);
     }
