@@ -22,7 +22,7 @@ export default function NavBar({onVehicleSpecClick, onVehicleOptClick, onVehicle
         <Button 
           label='Vehicle Options'
           onClick={() => {
-            console.log('Vehicle Options button clicked');
+            // console.log('Vehicle Options button clicked');
             onVehicleOptClick();
           }}
         />

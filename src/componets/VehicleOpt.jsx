@@ -4,7 +4,7 @@ export default function VehicleOpt({selectedVehicle}) {
   console.log('VehicleOpt component rendered', selectedVehicle);
   
   return (
-    <div>
+    <div className='vehicle-opt-styling'>
       {selectedVehicle && (
         <div>
           <h1>Selected Vehicle Options</h1>

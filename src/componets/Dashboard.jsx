@@ -17,7 +17,7 @@ const Dashboard = () => {
   }
 
   const handleVehicleOptClick = () => {
-    console.log('setting componet')
+    // console.log('setting componet')
     setActiveComponent('VehicleOpt')
   }
 
@@ -26,7 +26,7 @@ const Dashboard = () => {
   }
 
   return (
-    <div>
+    <div className='dashboard-page'>
       
       <div className='banner'>
         <Header />

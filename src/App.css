@@ -1,33 +1,60 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  height: calc(100vh - 4rem );
-  width: calc(100vh - 4rem);
+  padding: 2rem; 
+  height: calc(100vh - 4rem);
+  width: 100%; 
+
+  
+}
+
+.app-container {
+  background-image: url('src/assets/2024-GMC-Sierra-2500HD-AT4X-AEV-Edition.webp');
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
 }
 
 .banner {
-  border: 2px solid green;
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 10em;
   width: 100%;
   text-align: center;
 }
 
+.header {
+  color: black;
+}
+
+.vehicle-opt-styling {
+  color: white;
+}
+
 .dashboard-header {
-  display: grid;
-  height: 5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
   width: 100%;
- justify-content: center;
 }
 
 .nav-bar {
   display: flex;
-  margin:  1rem;
+  flex-wrap: wrap;
+  height: auto;
+  width: 100%;
   gap: 30px;
   justify-content: center;
+  padding: 1rem 0;
+}
 
-  
+@media (max-width: 770px) {
+ 
+  .nav-bar {
+    flex-direction: column;
+    align-items: center;
+  }
 }

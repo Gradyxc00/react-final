@@ -9,9 +9,9 @@ import SelectVehicle from './componets/SelectVehicle'
 function App() {
 
   return (
-    <>
+    <div className='app-container'>
       <Dashboard/>
-    </>
+    </div>
   )
 }
 
