@@ -3,7 +3,7 @@ import axios from 'axios'
 import './SelectVehicle.css'
 
 
-export default function SelectVehicle({onVehicleSelect}) {
+export default function SelectVehicle({onVehicleSelect, selectedVehicle}) {
   
 
   const apiKey = import.meta.env.VITE_API_KEY
@@ -29,6 +29,15 @@ export default function SelectVehicle({onVehicleSelect}) {
       console.error('Error getting Vehicle Information:', error);
     }
   };
+
+  useEffect(() => {
+    if (selectedVehicle) {
+      setSelectedYear(selectedVehicle.year.toString());
+      setSelectedMake(selectedVehicle.make);
+      setSelectedModel(selectedVehicle.model);
+    }
+  }, [selectedVehicle]);
+
 
 useEffect (() => {
   fetch('src/assets/Car_Model_List.json')

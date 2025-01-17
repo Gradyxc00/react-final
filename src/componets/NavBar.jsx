@@ -1,36 +1,32 @@
 import React, {useState} from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
-import SelectVehicle from './SelectVehicle'
 import Button from './Button'
+import SelectVehicle from './SelectVehicle'
 import VehicleSpec from './VehicleSpec'
 import VehicleOpt from './VehicleOpt'
 
-export default function NavBar() {
-  const [activeComponet, setActiveComponet] = useState(null)
 
-  const handleVehicleSpecClick = () => {
-    setActiveComponet('VehicleSpec')
-  }
+export default function NavBar({onVehicleSpecClick, onVehicleOptClick, onVehicleSelect}) {
+  
 
-  const handleVehicleOptClick = () => {
-    setActiveComponet('VehicleOpt')
-  }
 
   return (
     <>
       <div className='nav-bar'>
-        <SelectVehicle/>
+      <SelectVehicle onVehicleSelect={onVehicleSelect}/>
         <Button 
           label='Vehicle Specifications' 
-          onClick={handleVehicleSpecClick}
+          onClick={onVehicleSpecClick}
         />
 
         <Button 
           label='Vehicle Options'
-          onClick={handleVehicleOptClick}
+          onClick={() => {
+            console.log('Vehicle Options button clicked');
+            onVehicleOptClick();
+          }}
         />
-        {activeComponet === 'vehicleSpec' && <VehicleSpec/>}
-        {activeComponet === 'vehicleOpt' && <VehicleOpt/>}
+  
       </div>
     </>
   )

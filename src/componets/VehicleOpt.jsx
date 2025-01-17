@@ -1,21 +1,17 @@
 import React from 'react'
-import SelectVehicle from './SelectVehicle'
 
-export default function VehicleOpt() {
-  const [SelectedVehicle, setSelectedVehicle] = React.useState(null)
-  
-  const handleVehicleSelect = (vehicle) => {
-    setSelectedVehicle(vehicle)
-  }
+export default function VehicleOpt({selectedVehicle}) {
+  console.log('VehicleOpt component rendered', selectedVehicle);
   
   return (
     <div>
-      <SelectVehicle onVehicleSelect = {handleVehicleSelect}/>
-      {SelectedVehicle && (
+      {selectedVehicle && (
         <div>
           <h1>Selected Vehicle Options</h1>
-          <p>Drive: {SelectedVehicle.drive}</p>
-          <p>Fuel Type: {SelectedVehicle.fuel}</p>
+          <p>Vehicle Type: {selectedVehicle.class}</p>
+          <p>Drive: {selectedVehicle.drive}</p>
+          <p>Fuel Type: {selectedVehicle.fuel_type}</p>
+          <p>Cylinders: {selectedVehicle.cylinders}</p> 
         </div>
       )}
 

@@ -17,7 +17,6 @@
 }
 
 .dashboard-header {
-  border: 2px solid red;
   display: grid;
   height: 5em;
   width: 100%;
